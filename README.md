@@ -1,6 +1,6 @@
 # XOOI_FE_Testcase
 
-# How to run it locally
+### How to run it locally
 1. [Download](https://github.com/snntaylan/xooi_fe_testcase/archive/refs/heads/main.zip) or clone the [repository](https://github.com/snntaylan/xooi_fe_testcase.git)) to your local machine:
 ```bash
 $ git clone https://github.com/snntaylan/xooi_fe_testcase.git
