@@ -1,0 +1,20 @@
+<ng-template #sidenavRef>
+  <vex-sidenav [collapsed]="sidenavCollapsed$ | async"></vex-sidenav>
+</ng-template>
+
+<ng-template #toolbarRef>
+  <vex-toolbar
+    [hasShadow]="toolbarShadowEnabled$ | async"
+    [mobileQuery]="!(isDesktop$ | async)"
+    class="vex-toolbar"
+  ></vex-toolbar>
+</ng-template>
+
+<vex-layout [sidenavRef]="sidenavRef" [toolbarRef]="toolbarRef">
+  <h1 class="title mt-0 mb-1">Stock Analysis</h1>
+  <p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, eum nam
+    magnam nesciunt maxime quos animi cumque numquam distinctio ea dicta est
+    voluptate enim ab tempora fugiat blanditiis, impedit minus!
+  </p>
+</vex-layout>

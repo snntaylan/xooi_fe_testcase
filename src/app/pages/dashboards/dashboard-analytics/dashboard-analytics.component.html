@@ -1,0 +1,76 @@
+<vex-secondary-toolbar current="Stock Analysis">
+  <vex-breadcrumbs
+    [crumbs]="['Stock Analysis']"
+    class="flex-auto"
+  ></vex-breadcrumbs>
+
+  <button class="ml-2" color="primary" mat-icon-button type="button">
+    <mat-icon svgIcon="mat:more_vert"></mat-icon>
+  </button>
+</vex-secondary-toolbar>
+
+<div class="container p-gutter grid grid-cols-1 gap-4">
+  <div class="grid grid-cols-4 gap-4">
+    <mat-form-field class="flex-none">
+      <mat-label>Hisse Senedi Seçiniz</mat-label>
+      <mat-select
+        [value]="selectedStock$ | async"
+        multiple
+        (selectionChange)="triggerSelect($event)"
+      >
+        <!-- <mat-option (change)="selectAll($event)" value="all">Select All</mat-option> -->
+        <app-custom-select-all
+          [model]="selectedStock$ | async"
+          [values]="stockList"
+        ></app-custom-select-all>
+        <mat-option *ngFor="let stock of stockList" [value]="stock.value">{{
+          stock.text
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="stock-datepicker">
+      <mat-label>Tarih Seçiniz</mat-label>
+
+      <mat-date-range-input [rangePicker]="picker">
+        <input
+          matStartDate
+          (dateChange)="triggerDateChange($event, 'start')"
+          placeholder="Start date"
+        />
+        <input
+          matEndDate
+          (dateChange)="triggerDateChange($event, 'end')"
+          placeholder="End date"
+        />
+      </mat-date-range-input>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+
+    <div></div>
+
+    <div class="stock-button-right">
+      <button
+        class="rounded-full py-2 px-6 title"
+        color="primary"
+        mat-raised-button
+        type="button"
+        (click)="getServerData()"
+        [disabled]="selectedStocks.length > 0 && selectedDate ? false : true"
+      >
+        Göster
+      </button>
+    </div>
+  </div>
+
+  <vex-widget-large-chart [series]="chartData"></vex-widget-large-chart>
+
+  <vex-widget-table
+    [columns]="tableColumns"
+    [data]="tableData"
+  ></vex-widget-table>
+</div>

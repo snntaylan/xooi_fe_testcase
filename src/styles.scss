@@ -1,0 +1,68 @@
+@import "~simplebar/dist/simplebar.css";
+@import "~highlight.js/styles/androidstudio.css";
+// Vex Core
+@import "./@vex/styles/core";
+
+/*
+  You can override any CSS Variable or style here
+  Example:
+
+  :root {
+   --sidenav-background: #333333;
+  }
+
+  All possible variables can be found in @vex/styles/core or by simply inspecting the element you want to change
+  in Chrome/Firefox DevTools
+*/
+
+/**
+  Uncomment the below code and adjust the values to fit your colors, the application will automatically adjust
+ */
+:root {
+  // --color-primary: blue;
+  // --color-primary-contrast: white;
+
+  // --color-accent: yellow;
+  // --color-accent-contrast: black;
+
+  // --color-warn: yellow;
+  // --color-warn-contrast: black;
+}
+
+.stock-datepicker .mat-form-field-flex .mat-form-field-infix {
+  display: flex;
+  align-items: center;
+}
+
+.stock-datepicker .mat-form-field-flex .mat-form-field-infix .mat-datepicker-toggle {
+  margin-top: -26px;
+}
+
+.stock-datepicker .mat-form-field-flex .mat-form-field-infix .mat-icon-button {
+  position: relative;
+  top: 7px;
+}
+
+.stock-button-right {
+  margin-left: auto;
+}
+
+.mat-column-symbol.table-symbol {
+  text-align: center;
+  font-weight: bold;
+}
+
+
+tr.mat-header-row {
+  background-color: #c2c2c2;
+}
+
+tr.mat-header-row th {
+  font-weight: bolder;
+  color: #000;
+}
+
+app-custom-select-all .mat-checkbox-layout,
+app-custom-select-all .mat-checkbox-label {
+  width:100% !important;
+}
