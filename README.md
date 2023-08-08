@@ -21,5 +21,3 @@ Run into issues or bugs?
 
 For general support contact us at (mailto:sinan.taylan@outlook.com). Feedback from you to me is important and valuable.
 
-# License
-Have a blast. [MIT](https://opensource.org/licenses/MIT).
