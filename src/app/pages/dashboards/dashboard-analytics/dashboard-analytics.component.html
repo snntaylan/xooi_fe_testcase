@@ -1,10 +1,3 @@
-<vex-secondary-toolbar current="">
-  <!-- <vex-breadcrumbs
-    [crumbs]="['Hisse Senedi Analizi']"
-    class="flex-auto"
-  ></vex-breadcrumbs> -->
-</vex-secondary-toolbar>
-
 <div class="container p-gutter grid grid-cols-1 gap-4">
   <div class="grid grid-cols-4 gap-4">
     <mat-form-field class="flex-none">
@@ -14,7 +7,6 @@
         multiple
         (selectionChange)="triggerSelect($event)"
       >
-        <!-- <mat-option (change)="selectAll($event)" value="all">Select All</mat-option> -->
         <app-custom-select-all
           [model]="selectedStock$ | async"
           [values]="stockList"

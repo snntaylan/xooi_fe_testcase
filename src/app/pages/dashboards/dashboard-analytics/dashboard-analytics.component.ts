@@ -28,7 +28,7 @@ export class DashboardAnalyticsComponent {
       yaxisname: "Hisse Senedi Kapanış Fiyatı",
       showhovereffect: "1",
       drawcrossline: "1",
-      plottooltext: "<b>$dataValue</b> closing value of $seriesName",
+      plottooltext: "$seriesName kapanış değeri <b>$dataValue</b> ",
       theme: "umber"
     },
     categories: [

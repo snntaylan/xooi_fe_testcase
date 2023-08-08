@@ -18,16 +18,6 @@
 /**
   Uncomment the below code and adjust the values to fit your colors, the application will automatically adjust
  */
-:root {
-  // --color-primary: blue;
-  // --color-primary-contrast: white;
-
-  // --color-accent: yellow;
-  // --color-accent-contrast: black;
-
-  // --color-warn: yellow;
-  // --color-warn-contrast: black;
-}
 
 .stock-datepicker .mat-form-field-flex .mat-form-field-infix {
   display: flex;
@@ -55,6 +45,8 @@
 
 tr.mat-header-row {
   background-color: #c2c2c2;
+  
+
 }
 
 tr.mat-header-row th {
@@ -65,4 +57,17 @@ tr.mat-header-row th {
 app-custom-select-all .mat-checkbox-layout,
 app-custom-select-all .mat-checkbox-label {
   width:100% !important;
+}
+
+app-custom-select-all .mat-checkbox-checked .mat-checkbox-label {
+  color: rgba(var(--color-primary), 1);
+}
+
+.mat-table {
+  --foreground-divider: #d8d8d8;
+  text-align: center;
+}
+
+td.mat-cell {
+  border-left: 1px solid var(--foreground-divider);
 }
