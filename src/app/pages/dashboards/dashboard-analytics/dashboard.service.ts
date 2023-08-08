@@ -36,15 +36,17 @@ export class DashboardService {
 
   private restructureData(data: any) {
     const keynames = {meta: "Meta Data", daily: "Time Series (Daily)"};
-    let headerList = Object.keys(data[keynames.daily]).map(x => x);
+    let headerList = Object.keys(data[keynames.daily]).map(x => moment(x).format("DD-MM-YYYY"));
 
-    headerList = headerList.filter(x => moment(x) >= moment(this.selectedDate.start) && moment(x) <= moment(this.selectedDate.end))
+    headerList = headerList.filter(x => moment(x, "DD-MM-YYYY") >= moment(this.selectedDate.start, "DD-MM-YYYY") && moment(x, "DD-MM-YYYY") <= moment(this.selectedDate.end, "DD-MM-YYYY"))
     
     this._headerListSubject.next(headerList);
 
     const symbol = data[keynames.meta]["2. Symbol"]; // :( 2. Symbol is defined in their API
     
     Object.keys(data[keynames.daily]).forEach(x => {
+      const keyFormatChange = moment(x).format('DD-MM-YYYY');
+      data[keynames.daily][keyFormatChange] = data[keynames.daily][x]["4. close"];
       data[keynames.daily][x] = data[keynames.daily][x]["4. close"];
     });
 

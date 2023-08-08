@@ -1,6 +1,6 @@
 <div class="card overflow-hidden w-full flex flex-col">
   <div class="border-b py-4 px-6 flex items-center">
-    <h2 class="m-0 title flex-auto">Hisse Senedi Analiz Tablosu</h2>
+    <h2 class="m-0 title flex-auto text-center">Hisse Senedi Analiz Tablosu</h2>
 
     <!-- <button mat-icon-button type="button">
       <mat-icon class="text-secondary" svgIcon="mat:cloud_download"></mat-icon>
@@ -43,6 +43,11 @@
 
       <tr *matHeaderRowDef="visibleColumns" mat-header-row></tr>
       <tr *matRowDef="let row; columns: visibleColumns;" mat-row></tr>
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" [attr.colspan]="visibleColumns.length">
+          Filtreyle eşleşen veri yok.
+        </td>
+      </tr>
     </table>
   </div>
 

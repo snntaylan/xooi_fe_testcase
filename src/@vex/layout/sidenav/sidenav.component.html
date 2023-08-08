@@ -21,7 +21,7 @@
       </button>
     </div>
 
-    <div *ngIf="searchVisible$ | async" class="vex-sidenav-search__container">
+    <!-- <div *ngIf="searchVisible$ | async" class="vex-sidenav-search__container">
       <div class="vex-sidenav-search relative"
            (click)="openSearch()"
            matRipple
@@ -30,7 +30,7 @@
         <div class="flex-auto vex-sidenav-search__placeholder">Quick Search</div>
         <div class="flex-none vex-sidenav-search__keybind">Ctrl K</div>
       </div>
-    </div>
+    </div> -->
 
     <div class="vex-sidenav-toolbar__divider"></div>
   </div>
@@ -43,13 +43,13 @@
     </div>
 
     <div class="vex-sidenav-footer flex items-center justify-center opacity-20 px-6 py-6 select-none flex-none">
-      <img [src]="imageUrl$ | async" alt="Logo" class="w-8 select-none"/>
+      <!-- <img [src]="imageUrl$ | async" alt="Logo" class="w-8 select-none"/> -->
     </div>
   </vex-scrollbar>
 
   <div *ngIf="userVisible$ | async"
        class="vex-sidenav-user__container flex-none">
-    <div #userProfileMenuOriginRef
+    <!-- <div #userProfileMenuOriginRef
          (click)="openProfileMenu(userProfileMenuOriginRef)"
          [class.vex-sidenav-user--open]="userMenuOpen$ | async"
          class="vex-sidenav-user flex items-center"
@@ -61,6 +61,6 @@
         <div class="vex-sidenav-user__subtitle">Product Manager</div>
       </div>
       <mat-icon class="vex-sidenav-user__dropdown-icon flex-none" svgIcon="mat:arrow_drop_down"></mat-icon>
-    </div>
+    </div> -->
   </div>
 </div>

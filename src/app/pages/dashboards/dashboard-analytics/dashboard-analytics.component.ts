@@ -95,7 +95,7 @@ export class DashboardAnalyticsComponent {
   }
 
   triggerDateChange(event, type: 'start'| 'end') {
-    this.dateSelection[type] = moment(event.value).format('YYYY-MM-DD');
+    this.dateSelection[type] = moment(event.value).format('DD-MM-YYYY');
     if (type === 'end') {
       this.dashboardService.selectDate(this.dateSelection);
     }

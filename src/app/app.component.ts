@@ -134,11 +134,11 @@ export class AppComponent {
     this.navigationService.items = [
       {
         type: "subheading",
-        label: "Dashboards",
+        label: "",
         children: [
           {
             type: "link",
-            label: "Analytics",
+            label: "Hisse Senedi Analizi ",
             route: "/",
             icon: "mat:insights",
             routerLinkActiveOptions: { exact: true },
